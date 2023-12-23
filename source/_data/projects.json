@@ -1,0 +1,12 @@
+[
+    {
+       "name":"4D_VECTOR_CLI",
+       "url":"https://github.com/starvader13/4D_Vector_CLI",
+       "desc":"CLI based tool which performs different functionalities including translation, summarization and code snippet creation."
+    },
+    {
+       "name":"Spam Mail Detection",
+       "url":"https://github.com/starvader13/Spam_Mail_Detection",
+       "desc":"The project aims to develop a Logistic Regression model specifically designed for detecting spam mail."
+    }
+]
