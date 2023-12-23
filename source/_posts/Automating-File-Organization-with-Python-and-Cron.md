@@ -4,7 +4,7 @@ date: 2023-12-23 20:19:04
 tags:
 ---
 
-<img src="/home/starvader/ashutosh_workspace/git_ws/github/ashutoshgupta.dev/source/_posts/Automating-File-Organization-with-Python-and-Cron/Brown-Minimalist-Beauty-Blog-Banner.png" alt="Landing img">
+![Landing-Page](https://raw.githubusercontent.com/starvader13/ashutoshgupta.dev/main/source/_posts/Automating-File-Organization-with-Python-and-Cron/Brown-Minimalist-Beauty-Blog-Banner.png)
 
 In this blog post, I'm excited to share my experience of how I automated file organization using `Python` and `Cron`. Like many others, I encountered the daunting task of managing numerous files without a proper organizational structure.
 
@@ -184,9 +184,7 @@ To check whether your script is working correctly. Execute :
 
 ## Logfile Output
 
-```
-
-```
+![logfile](https://raw.githubusercontent.com/starvader13/ashutoshgupta.dev/main/source/_posts/Automating-File-Organization-with-Python-and-Cron/logfile.png)
 
 ---
 
