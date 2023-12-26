@@ -139,6 +139,10 @@ theme_config:
     start_year: 2016
     end_year: 2023
 
+  google_analytics:
+    enabled: true
+    id: 'UA-297177593-1'
+
   gravatar:
       email: ashutoshgupta1311@gmail.com
 
