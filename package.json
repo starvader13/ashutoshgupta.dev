@@ -24,6 +24,6 @@
     "hexo-theme-landscape": "^1.0.0"
   },
   "devDependencies": {
-    "netlify-cli": "^17.17.1"
+    "netlify-cli": "^17.19.4"
   }
 }
