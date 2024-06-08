@@ -1,12 +1,23 @@
 [
-    {
-       "name":"4D_VECTOR_CLI",
-       "url":"https://github.com/starvader13/4D_Vector_CLI",
-       "desc":"CLI based tool which performs different functionalities including translation, summarization and code snippet creation."
+   {
+      "name": "Stock Market Portfolio Manager",
+      "url": "https://starvader-stock-market-portfolio.vercel.app",
+      "desc": "Full-stack app for managing stock portfolios with CRUD functionality and user authentication."
     },
     {
-       "name":"Spam Mail Detection",
-       "url":"https://github.com/starvader13/Spam_Mail_Detection",
-       "desc":"The project aims to develop a Logistic Regression model specifically designed for detecting spam mail."
+      "name": "4D_VECTOR_CLI",
+      "url": "https://github.com/starvader13/4D_Vector_CLI",
+      "desc": "CLI tool for translation, summarization, and code snippet creation using Bash, Python, and OpenAI."
+    },
+    {
+      "name": "Business E-card",
+      "url": "https://github.com/starvader13/Business-ECard",
+      "desc": "Full-stack app for creating and sharing digital business cards with unique ID generation."
+    },
+    {
+      "name": "Spam Mail Detection",
+      "url": "https://github.com/starvader13/Spam_Mail_Detection",
+      "desc": "Logistic Regression model for detecting spam mail."
     }
+    
 ]

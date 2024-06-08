@@ -46,12 +46,14 @@ relative_link: false
 future: true
 # syntax_highlighter: highlight.js
 highlight:
+  enable: true
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
+  enable: false
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -106,9 +108,9 @@ theme_config:
 
   nav:
     home: /
-    # about: /about/
-    articles: /archives/
-    projects: https://github.com/starvader13
+    about: /about/
+    Blog: /archives/
+    # projects: https://github.com/starvader13
 
   posts_overview:
     show_all_posts: false
@@ -136,8 +138,8 @@ theme_config:
       link: mailto:ashutoshgupta1311@gmail.com
     
   copyright:
-    start_year: 2016
-    end_year: 2023
+    start_year: 2023
+    end_year: 2026
 
   google_analytics:
     enabled: true
