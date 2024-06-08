@@ -106,9 +106,9 @@ theme_config:
 
   nav:
     home: /
-    # about: /about/
+    about: /about/
     articles: /archives/
-    projects: https://github.com/starvader13
+    # projects: https://github.com/starvader13
 
   posts_overview:
     show_all_posts: false
@@ -136,8 +136,8 @@ theme_config:
       link: mailto:ashutoshgupta1311@gmail.com
     
   copyright:
-    start_year: 2016
-    end_year: 2023
+    start_year: 2023
+    end_year: 2026
 
   google_analytics:
     enabled: true
