@@ -1,23 +1,27 @@
 [
-   {
-      "name": "Stock Market Portfolio Manager",
-      "url": "https://starvader-stock-market-portfolio.vercel.app",
-      "desc": "Full-stack app for managing stock portfolios with CRUD functionality and user authentication."
-    },
-    {
-      "name": "4D_VECTOR_CLI",
-      "url": "https://github.com/starvader13/4D_Vector_CLI",
-      "desc": "CLI tool for translation, summarization, and code snippet creation using Bash, Python, and OpenAI."
-    },
-    {
-      "name": "Business E-card",
-      "url": "https://github.com/starvader13/Business-ECard",
-      "desc": "Full-stack app for creating and sharing digital business cards with unique ID generation."
-    },
-    {
-      "name": "Spam Mail Detection",
-      "url": "https://github.com/starvader13/Spam_Mail_Detection",
-      "desc": "Logistic Regression model for detecting spam mail."
-    }
-    
+  {
+    "name": "PATRA",
+    "url": "https://patra-starvader.vercel.app",
+    "desc": "Patra is the open-source digital card generator for students and professionals. Create and share your digital card with a unique ID for anyone to view."
+  },
+  {
+    "name": "4D_VECTOR_CLI",
+    "url": "https://github.com/starvader13/4D_Vector_CLI",
+    "desc": "CLI tool for translation, summarization, and code snippet creation using Bash, Python, and OpenAI."
+  },
+  {
+    "name": "Forex Historical Exchange Data REST API",
+    "url": "https://github.com/starvader13/Forex-Historical-Data-REST-API",
+    "desc": "This project is a REST API that scrapes historical exchange data from Yahoo Finance for specified currency pairs and periods, and stores it in an in-memory SQLite database. The data is periodically updated using a CRON job."
+  },
+  {
+    "name": "Spam Mail Detection",
+    "url": "https://github.com/starvader13/Spam_Mail_Detection",
+    "desc": "Logistic Regression model for detecting spam mail."
+  },
+  {
+    "name": "Reconciler-Using-DOM",
+    "url": "https://github.com/starvader13/Reconciler-Using-DOM",
+    "desc": "This project offers a simplified React reconciliation algorithm demonstration within a dynamic Todo List application. It highlights diff calculation and DOM manipulation for element addition, update, and removal, mirroring React and ReactDOM's core functions."
+  }
 ]
