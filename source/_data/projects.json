@@ -2,26 +2,26 @@
   {
     "name": "PATRA",
     "url": "https://patra-starvader.vercel.app",
-    "desc": "Patra is the open-source digital card generator for students and professionals. Create and share your digital card with a unique ID for anyone to view."
+    "desc": "An open-source digital card generator for students and professionals. Easily create and share personalized digital cards with a unique public ID."
   },
   {
     "name": "4D_VECTOR_CLI",
     "url": "https://github.com/starvader13/4D_Vector_CLI",
-    "desc": "CLI tool for translation, summarization, and code snippet creation using Bash, Python, and OpenAI."
+    "desc": "A versatile CLI tool for translation, summarization, and code snippet generation using Bash, Python, and OpenAI APIs."
   },
   {
     "name": "Forex Historical Exchange Data REST API",
     "url": "https://github.com/starvader13/Forex-Historical-Data-REST-API",
-    "desc": "This project is a REST API that scrapes historical exchange data from Yahoo Finance for specified currency pairs and periods, and stores it in an in-memory SQLite database. The data is periodically updated using a CRON job."
+    "desc": "A RESTful API that scrapes and serves historical forex data from Yahoo Finance, storing it in an in-memory SQLite database."
   },
   {
     "name": "Spam Mail Detection",
     "url": "https://github.com/starvader13/Spam_Mail_Detection",
-    "desc": "Logistic Regression model for detecting spam mail."
+    "desc": "A machine learning model using Logistic Regression to classify and detect spam emails."
   },
   {
-    "name": "Reconciler-Using-DOM",
+    "name": "Reconciler Using DOM",
     "url": "https://github.com/starvader13/Reconciler-Using-DOM",
-    "desc": "This project offers a simplified React reconciliation algorithm demonstration within a dynamic Todo List application. It highlights diff calculation and DOM manipulation for element addition, update, and removal, mirroring React and ReactDOM's core functions."
+    "desc": "A plain JavaScript implementation of a reconciliation algorithm, demonstrated through a dynamic Todo List that manually calculates diffs and updates the DOM."
   }
 ]
