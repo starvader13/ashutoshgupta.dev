@@ -1,5 +1,20 @@
 [
   {
+    "name": "BridgeLLM",
+    "url": "https://www.bridgellm.tech/",
+    "desc": "An MCP server that lets AI coding agents share context and query each other across services. Backend and frontend agents stay in sync on API contracts and decisions — without you being the middleman on Slack."
+  },
+  {
+    "name": "Deploy Checklist Bot",
+    "url": "https://github.com/starvader13/deploy-checklist-bot",
+    "desc": "A GitHub App that uses Claude AI to analyze PR diffs and generate repo-configured deploy checklists. Blocks merges until every item is checked off — catching migrations, env var gaps, and API breaking changes before they hit prod."
+  },
+  {
+    "name": "Shellock",
+    "url": "https://github.com/starvader13/shellock",
+    "desc": "A shell auto-correction tool that detects failed commands and suggests fixes using fuzzy matching against your command history — with a hybrid preexec/trap ERR architecture for zero overhead on successful commands."
+  },
+  {
     "name": "PATRA",
     "url": "https://patra-starvader.vercel.app",
     "desc": "An open-source digital card generator for students and professionals. Easily create and share personalized digital cards with a unique public ID."
@@ -8,20 +23,5 @@
     "name": "4D_VECTOR_CLI",
     "url": "https://github.com/starvader13/4D_Vector_CLI",
     "desc": "A versatile CLI tool for translation, summarization, and code snippet generation using Bash, Python, and OpenAI APIs."
-  },
-  {
-    "name": "Forex Historical Exchange Data REST API",
-    "url": "https://github.com/starvader13/Forex-Historical-Data-REST-API",
-    "desc": "A RESTful API that scrapes and serves historical forex data from Yahoo Finance, storing it in an in-memory SQLite database."
-  },
-  {
-    "name": "Spam Mail Detection",
-    "url": "https://github.com/starvader13/Spam_Mail_Detection",
-    "desc": "A machine learning model using Logistic Regression to classify and detect spam emails."
-  },
-  {
-    "name": "Reconciler Using DOM",
-    "url": "https://github.com/starvader13/Reconciler-Using-DOM",
-    "desc": "A plain JavaScript implementation of a reconciliation algorithm, demonstrated through a dynamic Todo List that manually calculates diffs and updates the DOM."
   }
 ]
