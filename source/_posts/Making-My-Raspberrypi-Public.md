@@ -18,7 +18,7 @@ So the problem statement changed from deploying the server to successfully SSHin
 ## The Irony
 The best way to ssh into my pi was to use a vm that's publicly accessible, and have the pi create a reverse tunnel to it. So i'm using a cloud vm to get into a machine sitting on the same network, because i want to be able to reach it from anywhere in the world. Anyway, too much jargon? Here's what we're actually building.
 ```
-Mac ── SSH ──> GCP VM (public)
+Machine ── SSH ──> GCP VM (public)
                       ↑
                reverse tunnel
                       │
@@ -59,10 +59,10 @@ AllowTcpForwarding yes
 ```
 Restart ssh (or just reboot the thing).
 
-Now on the pi, install `autossh` so the tunnel stays alive and reconnects automatically if it drops, then run:
+Now on the pi, run:
 ```bash
 # raspberry pi
-autossh -i <path-to-your-ssh-private-key> -N -R 2222:localhost:22 -o IdentitiesOnly=yes <vm-username>@<vm-external-ip>
+ssh -i <path-to-your-ssh-private-key> -N -R 2222:localhost:22 -o IdentitiesOnly=yes <vm-username>@<vm-external-ip>
 ```
 This creates a reverse tunnel from the pi to the vm on port 2222, forwarding to the pi's port 22.
 
@@ -92,6 +92,47 @@ Finally, from your machine:
 ssh -p 2222 <vm-username>@<vm-external-ip>
 ```
 Enter your raspberry pi password. Boom, you're in.
+
+## The Automation: Optional
+The plain ssh tunnel works but has two problems — it times out if the connection drops, and if the pi reboots you have to manually start it again.
+
+**Part 1: Keep the tunnel alive**
+
+Install `autossh` on the pi and use it instead of plain ssh. The `-M 0` flag tells autossh to rely on SSH's own keepalive instead of a separate monitoring port:
+```bash
+# raspberry pi
+autossh -M 0 -i <path-to-your-ssh-private-key> -N -R 2222:localhost:22 -o IdentitiesOnly=yes <vm-username>@<vm-external-ip>
+```
+
+**Part 2: Start the tunnel on reboot**
+
+Create a systemd service on the pi:
+```bash
+# raspberry pi
+sudo vi /etc/systemd/system/pi-tunnel.service
+```
+Paste this in:
+```
+[Unit]
+Description=Reverse SSH Tunnel
+After=network-online.target
+
+[Service]
+User=<your-pi-username>
+ExecStart=/usr/bin/autossh -M 0 -i <path-to-your-ssh-private-key> -o IdentitiesOnly=yes -N -R 2222:localhost:22 <vm-username>@<vm-external-ip>
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```
+Enable and start it:
+```bash
+# raspberry pi
+sudo systemctl enable pi-tunnel
+sudo systemctl start pi-tunnel
+```
+Now the tunnel comes up automatically on every reboot.
 
 ## The Happy Engineer
 While it seems like i have ranted, i genuinely enjoyed every bit of this. Even the small learnings compound up sooner or later. ***Life is a sprint not a marathon***.
