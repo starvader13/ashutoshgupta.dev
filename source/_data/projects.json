@@ -2,17 +2,17 @@
   {
     "name": "BridgeLLM",
     "url": "https://www.bridgellm.tech/",
-    "desc": "An MCP server for agent-to-agent communication. Backend and frontend agents share API contracts, query each other in real time, and stay in sync across services without you being the middleman."
+    "desc": "MCP server that lets AI coding agents share context and query each other across services."
   },
   {
     "name": "Deploy Checklist Bot",
     "url": "https://github.com/starvader13/deploy-checklist-bot",
-    "desc": "A GitHub App that reads your PR diff, figures out what could go wrong at deploy time, and blocks the merge until every item is signed off. Catches missed migrations, undeclared env vars, and breaking API changes before they hit prod."
+    "desc": "GitHub App that analyzes PR diffs and blocks merges until your deploy checklist is signed off."
   },
   {
     "name": "Shellock",
     "url": "https://github.com/starvader13/shellock",
-    "desc": "A shell autocorrect tool built on a hybrid preexec/trap ERR architecture. It captures failed commands, runs fuzzy matching against your history, and suggests a fix with zero overhead on commands that succeed."
+    "desc": "Shell autocorrect tool that catches failed commands, suggests fixes using fuzzy matching, and learns from your history."
   },
   {
     "name": "PATRA",
