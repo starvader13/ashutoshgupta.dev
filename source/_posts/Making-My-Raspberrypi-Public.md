@@ -93,10 +93,10 @@ ssh -p 2222 <vm-username>@<vm-external-ip>
 ```
 Enter your raspberry pi password. Boom, you're in.
 
-## The Automation: Optional
+## The God Mode: Optional
 The plain ssh tunnel works but has two problems — it times out if the connection drops, and if the pi reboots you have to manually start it again.
 
-**Part 1: Keep the tunnel alive**
+### Part 1: Keep the tunnel alive
 
 Install `autossh` on the pi and use it instead of plain ssh. The `-M 0` flag tells autossh to rely on SSH's own keepalive instead of a separate monitoring port:
 ```bash
@@ -104,7 +104,7 @@ Install `autossh` on the pi and use it instead of plain ssh. The `-M 0` flag tel
 autossh -M 0 -i <path-to-your-ssh-private-key> -N -R 2222:localhost:22 -o IdentitiesOnly=yes <vm-username>@<vm-external-ip>
 ```
 
-**Part 2: Start the tunnel on reboot**
+### Part 2: Start the tunnel on reboot
 
 Create a systemd service on the pi:
 ```bash
