@@ -32,7 +32,7 @@ I started with spinning up a vm on gcp, kept the config basic — `e2-micro`, `1
 Now both my mac and the pi need to be able to connect to this vm. If it was just my machine, i'd just use `gcloud`:
 ```bash
 # your machine
-gcloud compute ssh <vm-instance-name> --zone=<vm-instance-zone>
+gcloud compute ssh <vm-username> --zone=<vm-instance-zone>
 ```
 But since the pi also needs to connect, i wanted ssh keys managed directly on the vm rather than through gcp's metadata. To do that, update the vm's metadata with:
 ```
