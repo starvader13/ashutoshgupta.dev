@@ -47,7 +47,7 @@ future: true
 # syntax_highlighter: highlight.js
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ""
   wrap: true
@@ -55,7 +55,7 @@ highlight:
 prismjs:
   enable: false
   preprocess: true
-  line_number: true
+  line_number: false
   tab_replace: ""
 
 # Home page setting
@@ -108,7 +108,6 @@ theme_config:
 
   nav:
     home: /
-    about: /about/
     Blog: /archives/
     # projects: https://github.com/starvader13
 

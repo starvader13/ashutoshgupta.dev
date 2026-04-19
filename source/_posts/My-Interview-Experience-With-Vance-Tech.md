@@ -1,7 +1,8 @@
 ---
 title: My Interview Experience With Vance
 date: 2024-08-13 10:32:11
-tags: Interview
+tags:
+  - interview
 ---
 
 Hey everyone! 👋

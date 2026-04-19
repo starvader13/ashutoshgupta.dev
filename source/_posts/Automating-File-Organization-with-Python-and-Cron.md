@@ -2,6 +2,7 @@
 title: "Automating File Organization with Python and Cron: A Step-by-Step Guide"
 date: 2023-12-23 20:19:04
 tags:
+  - scripting
 ---
 
 ![Landing-Page](https://raw.githubusercontent.com/starvader13/ashutoshgupta.dev/main/source/_posts/Automating-File-Organization-with-Python-and-Cron/Brown-Minimalist-Beauty-Blog-Banner.png)
