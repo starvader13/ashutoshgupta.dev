@@ -8,7 +8,7 @@ tags:
 ## The Mental Breakdown
 I wanted to deploy [bridgellm](https://www.bridgellm.tech/) to my raspberry pi just to see how the infra holds up, setup friction, latency, the usual. Seemed like a fun weekend thing.
 
-I pulled out my pi, booted it up, and from my mac ran `ssh starvader@192.xx.xx.xx`. ***Boom, connected***. Well not really, it failed with `no route to host`. I thought the problem was pretty simple, maybe ssh just wasn't enabled on the pi. Walked over, checked. SSH is on, pub key is there on the pi, tried password auth too. Still nothing.
+I pulled out my pi, booted it up, and from my machine ran `ssh starvader@192.xx.xx.xx`. ***Boom, connected***. Well not really, it failed with `no route to host`. I thought the problem was pretty simple, maybe ssh just wasn't enabled on the pi. Walked over, checked. SSH is on, pub key is there on the pi, tried password auth too. Still nothing.
 
 After a 30 min debugging session and a mental breakdown, i realised **my wifi router is blocking all incoming traffic to the pi** and i don't have admin access to set up port forwarding on it.
 
@@ -29,7 +29,7 @@ The irony is that i started this whole thing to reduce my dependency on cloud, a
 ## The Bridge
 I started with spinning up a vm on gcp, kept the config basic — `e2-micro`, `1 vCPU`, `512mb ram`, `10gb disk`, `ubuntu minimal`.
 
-Now both my mac and the pi need to be able to connect to this vm. If it was just my machine, i'd just use `gcloud`:
+Now both my machine and the pi need to be able to connect to this vm. If it was just my machine, i'd just use `gcloud`:
 ```bash
 # your machine
 gcloud compute ssh <vm-username> --zone=<vm-instance-zone>
@@ -45,6 +45,7 @@ Test it:
 # your machine
 ssh -i <path-to-your-ssh-private-key> -o IdentitiesOnly=yes <vm-username>@<vm-external-ip>
 ```
+`-o IdentitiesOnly=yes` forces SSH to use only the key you specified, ignoring anything loaded in your ssh-agent. Saves you a "permission denied" head-scratcher.
 
 ## The Tunnel
 Before running anything on the pi, fix the ssh config on the vm first. **By default `GatewayPorts` is off**, which means the tunnel port only binds to `127.0.0.1` and you can't hit it from outside the vm. Save yourself the back and forth and just set it up front:
@@ -73,7 +74,7 @@ ss -tlnp | grep 2222
 ```
 Expected: `0.0.0.0:2222`. If you see `127.0.0.1:2222` the `GatewayPorts` change didn't apply, double check the sshd restart.
 
-Once this is done, gcp's firewall will likely still block the traffic.
+Once this is done, try SSHing in from your machine. If you get `Operation timed out`, gcp's firewall is blocking the port.
 
 ## The Firewall
 We could just allow all IPs but let's do it properly. Create a firewall rule in gcp with:
@@ -81,7 +82,7 @@ We could just allow all IPs but let's do it properly. Create a firewall rule in 
 Direction: Ingress
 Protocol: TCP
 Port: 2222
-Source: <your-machine-ip>/32 (45.xxx.xxx.xxx/32)
+Source: <your-machine-ip>/32 (45.xxx.xxx.xxx/32 ← /32 means single IP, maximum restriction)
 Target: gcp-bridge (network tag)
 ```
 The target is a network tag — you set it in the firewall rule and then add the same tag to your vm under network tags. This is how GCP knows which vm the rule applies to. Both sides need to match. GCP applies firewall rules instantly so no reboot needed.
@@ -94,7 +95,7 @@ ssh -p 2222 <vm-username>@<vm-external-ip>
 Enter your raspberry pi password. Boom, you're in.
 
 ## The God Mode: Optional
-The plain ssh tunnel works but has two problems — it times out if the connection drops, and if the pi reboots you have to manually start it again.
+The plain ssh tunnel works but has two problems. It times out if the connection drops, and if the pi reboots you have to manually start it again.
 
 ### Part 1: Keep the tunnel alive
 
@@ -135,5 +136,5 @@ sudo systemctl start pi-tunnel
 Now the tunnel comes up automatically on every reboot.
 
 ## The Happy Engineer
-While it seems like i have ranted, i genuinely enjoyed every bit of this. Even the small learnings compound up sooner or later. ***Life is a sprint not a marathon***.
+While it seems like i have ranted, i genuinely enjoyed every bit of this. Even the small learnings compound up sooner or later. ***Life is a marathon not a sprint***.
 With that, thanks for reading. Drop me a text if you have any feedback.
